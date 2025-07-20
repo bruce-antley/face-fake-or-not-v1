@@ -1,4 +1,5 @@
-# 🧠 face-fake-or-not-v1
+
+# face-fake-or-not-v1
 
 > A ResNet50-based image classifier fine-tuned on real and AI-generated faces using FastAI.
 
@@ -6,7 +7,7 @@ This project explores whether an image of a human face is real or AI-generated (
 
 ---
 
-### 📸 Demo
+### Demo
 
 Here's an example of the model in action, hosted on [Hugging Face Spaces](https://huggingface.co/spaces/BA-Baracus/face_fake_or_not_v1):
 
@@ -14,7 +15,7 @@ Here's an example of the model in action, hosted on [Hugging Face Spaces](https:
 
 ---
 
-### 📊 Model Evolution & Performance
+### Model Evolution & Performance
 
 The model went through multiple rounds of fine-tuning:
 
@@ -30,7 +31,7 @@ The model went through multiple rounds of fine-tuning:
 
 ---
 
-### 🧪 Built With
+### Built With
 
 - Python + FastAI
 - PyTorch
@@ -39,11 +40,42 @@ The model went through multiple rounds of fine-tuning:
 
 ---
 
-### 🚀 Try It Yourself
+### Try It Yourself
 
 👉 [Launch the demo on Hugging Face](https://huggingface.co/spaces/BA-Baracus/face_fake_or_not_v1)
 
 Or clone the repo and run locally:
 
-```bash
+<pre><code>```bash
 git clone https://github.com/bruce-antley/face-fake-or-not-v1.git
+cd face-fake-or-not-v1
+```</code></pre>
+
+
+⸻
+### Model Info
+
+This app uses a FastAI-trained binary classifier that predicts whether a face is real or AI-generated.
+
+The model is hosted on Hugging Face:
+👉 round2_final.pkl
+
+To load it in Python:
+
+from huggingface_hub import hf_hub_download
+from fastai.learner import load_learner
+
+model_path = hf_hub_download(
+    repo_id="BA-Baracus/face-fake-or-not-v1",
+    filename="round2_final.pkl"
+)
+
+learn = load_learner(model_path)
+
+
+⸻
+
+### License
+
+This project is licensed under the MIT License.
+
